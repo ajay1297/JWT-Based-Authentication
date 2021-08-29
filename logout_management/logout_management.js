@@ -23,7 +23,6 @@ class LogoutManagement {
                 return res.status(401).json({errors: [{msg: 'User not authorized'}]});
             }
             delete global.refreshTokenCache[decoded.name];
-            console.log(JSON.stringify(global.refreshTokenCache));
             req.session.destroy((error) => {
                 if(error)  {
                     console.log(error.message);
