@@ -35,7 +35,6 @@ class LoginManagement {
             const accessToken = jwt.sign({name}, config.get('jwtSecretKey'), {expiresIn: '20s'});
             const refreshToken = jwt.sign({name}, config.get('jwtRefreshKey'), {expiresIn: '10d'});
             global.refreshTokenCache[name] = refreshToken;
-            console.log(JSON.stringify(global.refreshTokenCache));
             req.session.user = name;
             return res.json({accessToken, refreshToken});
         }
@@ -58,7 +57,6 @@ class LoginManagement {
         }
         try {
             const decoded = jwt.verify(refreshToken, config.get('jwtRefreshKey'));
-            console.log(JSON.stringify(global.refreshTokenCache));
             if(!global.refreshTokenCache[decoded.name] || global.refreshTokenCache[decoded.name] != refreshToken) {
                 return res.status(401).json({errors: [{msg: 'User not authorized'}]});
             }
