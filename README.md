@@ -86,3 +86,24 @@ http://localhost:10001/api/login/verifyAuthtoken
 {}
 
 Here, verification of auth token is done.
+
+## Troubleshooting
+
+#### Error 1
+
+###### ReferenceError: TextEncoder is not defined
+
+If the above error comes, Please follow the below steps
+
+Remove these 2 lines from \node_modules\whatwg-url\dist\encoding.js
+```
+const utf8Encoder = new TextEncoder();
+const utf8Decoder = new TextDecoder("utf-8", { ignoreBOM: true });
+```
+
+Add these 3 lines in \node_modules\whatwg-url\dist\encoding.js
+```
+const util = require('util');
+const utf8Encoder = new util.TextEncoder();
+const utf8Decoder = new util.TextDecoder("utf-8", { ignoreBOM: true });
+```
