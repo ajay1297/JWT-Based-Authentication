@@ -1,0 +1,7 @@
+{
+    "mongoDBUri" : "mongodb+srv://nodeuser:Node1234@cluster0.9knub.mongodb.net/node-jwt?retryWrites=true&w=majority",
+    "jwtSecretKey" : "thisismysecretkeyforjwt",
+    "sessionSecretKey" : "thisismysecretkeyforsession",
+    "jwtRefreshKey" : "thisismysecretkeyforrefreshtoken",
+    "port": 10001
+}

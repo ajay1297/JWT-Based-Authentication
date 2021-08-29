@@ -1,0 +1,26 @@
+{
+  "name": "jwt_based_user_registration_and_authentication",
+  "version": "1.0.0",
+  "description": "JWT based user registration and authentication system",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "server": "nodemon server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.6",
+    "connect-mongodb-session": "^3.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
