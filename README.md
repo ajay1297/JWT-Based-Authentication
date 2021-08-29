@@ -1,6 +1,15 @@
 # JWT-Based-Authentication
 
-All the payload validations are done using express-validator
+## Installation
+
+Clone the repository
+
+Do `npm install` to install packages.
+
+To run the application `npm run start`
+
+
+> All the payload validations are done using express-validator
 
 ## Register API - POST Request
 http://localhost:10001/api/user/register
