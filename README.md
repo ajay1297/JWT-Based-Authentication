@@ -8,11 +8,12 @@ Do `npm install` to install packages.
 
 To run the application `npm run start`
 
-
+> We should read PORT and secret keys from environment, not from the code
+> 
 > All the payload validations are done using express-validator
 
 ## Register API - POST Request
-http://localhost:10001/api/user/register
+https://jwtbasedauthnodejs.herokuapp.com/api/user/register
 
 {
     "name":"Vibe",
@@ -27,7 +28,7 @@ Registers the users and stores the data in the database with encrypted password.
 In this, 'name' field should be unique as I am considering it as userId. But in real, time userId and name will be different.
 
 ## Login API - POST Request
-http://localhost:10001/api/login/
+https://jwtbasedauthnodejs.herokuapp.com/api/login/
 
 {
     "name": "Vibe",
@@ -47,7 +48,7 @@ We can set expiry time for redis keys. So we can set expiry time as refresh toke
 If anonymous refresh token comes in, we can validate the token from redis.
 
 ## Logout API - POST Request
-http://localhost:10001/api/logout
+https://jwtbasedauthnodejs.herokuapp.com/api/logout
 
 {
     "token": <refresh_token>
@@ -56,14 +57,14 @@ http://localhost:10001/api/logout
 We destroy the session and remove the refresh token from cache.
 
 ## Search API - POST Request
-http://localhost:10001/api/user/search
+https://jwtbasedauthnodejs.herokuapp.com/api/user/search
 
 {
     "contact":"9349200022"
 }
 
 or
-http://localhost:10001/api/user/search
+https://jwtbasedauthnodejs.herokuapp.com/api/user/search
 
 {
     "name":"Vibe"
@@ -72,7 +73,7 @@ http://localhost:10001/api/user/search
 The search is based on either contact parameter or name parameter.
 
 ## Refresh Token API - POST Request
-http://localhost:10001/api/login/refreshToken
+https://jwtbasedauthnodejs.herokuapp.com/api/login/refreshToken
 
 {
     "token": <refresh_token>
@@ -82,7 +83,7 @@ Returns a new access token.
 Since the access token is short lived. Instead of logging in everytime, we get a new access token using refresh token.
 
 ## Home Page/Dashboard API - POST Request
-http://localhost:10001/api/login/verifyAuthtoken
+https://jwtbasedauthnodejs.herokuapp.com/api/login/verifyAuthtoken
 {}
 
 Here, verification of auth token is done.
